@@ -1,5 +1,5 @@
 [user]
 	name = Jack Zhang
 	email = <>
-[coer]
+[core]
 	excludesfile = /home/jack/.gitignore
