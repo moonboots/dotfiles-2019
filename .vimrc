@@ -102,16 +102,12 @@ Plug 'tpope/vim-abolish'
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " noremap <Leader>u :UltiSnipsEdit<CR>
 
-" Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
-" noremap <silent> <leader>t :CtrlP<CR>
-
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 silent! nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 
 Plug 'jlanzarotta/bufexplorer', {'on': 'BufExplorer'}
 nnoremap <leader>b :BufExplorer<cr>
 
-" Plug 'bronson/vim-trailing-whitespace'
 " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 " Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 
@@ -122,17 +118,14 @@ Plug 'junegunn/fzf.vim'
 noremap <silent> <leader>t :Files<CR>
 
 Plug 'fatih/vim-go'
-" noremap <silent> <leader>t :GFiles<CR>
 
 " Command for git grep
 " - fzf#vim#grep(command, with_column, [options], [fullscreen])
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
 
-  " Plug 'junegunn/goyo.vim'
-
 " Plug 'flowtype/vim-flow'
-Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'rafi/awesome-vim-colorschemes'
 
 Plug 'jremmen/vim-ripgrep'
 noremap <silent> <leader>g :Rg<CR>
