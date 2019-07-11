@@ -1,0 +1,21 @@
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+
+# custom prompt
+color="\[\e[38;05;118m\]"
+gray="\[\e[38;05;238m\]"
+end="\[\e[0m\]"
+PS1="\n$gray\w$end\n${color}$ $end"
+
+export TERM=screen-256color
+export EDITOR=vim
+export PROMPT_COMMAND='history -a'
+export GO111MODULE=on
+
+alias gcm='git commit -m'
+alias glg='git log --graph --oneline --decorate --all'
+alias gap='git add -p'
+alias gai='git add -i'
+alias gs='git status'
+alias gd='git diff'
+alias gc='git commit'
+alias gf="git diff --name-only | uniq | xargs $EDITOR"
