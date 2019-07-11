@@ -119,7 +119,7 @@ nnoremap <leader>b :BufExplorer<cr>
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-noremap <silent> <leader>t :GFiles<CR>
+noremap <silent> <leader>t :Files<CR>
 
 Plug 'fatih/vim-go'
 " noremap <silent> <leader>t :GFiles<CR>
