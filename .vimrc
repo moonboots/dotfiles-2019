@@ -55,9 +55,6 @@ highlight SpellBad ctermbg=88
 highlight SignColumn ctermbg=none
 highlight SyntasticErrorSign ctermfg=88
 
-" nnoremap <leader>ev :e $MYVIMRC<cr>
-" nnoremap <leader>sv :source $MYVIMRC<cr>
-
 set autoread
 
 set shiftround
@@ -126,15 +123,15 @@ nnoremap <Leader>wv <C-W>v
 nnoremap <Leader>w= <C-W>=
 nnoremap <Leader>wo <C-W>o
 
-nnoremap <C-W>j :echo "Use [space]wj"<CR>
-nnoremap <C-W>k :echo "Use [space]wk"<CR>
-nnoremap <C-W>l :echo "Use [space]wl"<CR>
-nnoremap <C-W>h :echo "Use [space]wh"<CR>
-nnoremap <C-W>c :echo "Use [space]wc"<CR>
-nnoremap <C-W>s :echo "Use [space]ws"<CR>
-nnoremap <C-W>v :echo "Use [space]wv"<CR>
-nnoremap <C-W>= :echo "Use [space]w="<CR>
-nnoremap <C-W>o :echo "Use [space]0o"<CR>
+nnoremap <C-W>j :echoe "use wj"<CR>
+nnoremap <C-W>k :echoe "use wk"<CR>
+nnoremap <C-W>l :echoe "use wl"<CR>
+nnoremap <C-W>h :echoe "use wh"<CR>
+nnoremap <C-W>c :echoe "use wc"<CR>
+nnoremap <C-W>s :echoe "use ws"<CR>
+nnoremap <C-W>v :echoe "use wv"<CR>
+nnoremap <C-W>= :echoe "use w="<CR>
+nnoremap <C-W>o :echoe "use wo"<CR>
 
 " go shortcuts
 nnoremap <Leader>gr :GoRun<CR>
@@ -149,3 +146,8 @@ augroup END
 
 nnoremap <Leader>vr :source ~/.vimrc<CR>
 nnoremap <Leader>ve :e ~/.vimrc<CR>
+
+" nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>ev :echoe "use ve"<CR>
+" nnoremap <leader>sv :source $MYVIMRC<cr>
+
