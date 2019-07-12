@@ -19,33 +19,6 @@ let mapleader=" "
 let maplocalleader=" "
 set visualbell t_vb=
 
-" prefix mapping
-nnoremap <Leader>wj <C-W>j
-nnoremap <Leader>wk <C-W>k
-nnoremap <Leader>wl <C-W>l
-nnoremap <Leader>wh <C-W>h
-nnoremap <Leader>wc <C-W>c
-nnoremap <Leader>ws <C-W>s
-nnoremap <Leader>wv <C-W>v
-nnoremap <Leader>w= <C-W>=
-nnoremap <Leader>wo <C-W>o
-
-nnoremap <C-W>j :echo "Use [space]wj"<CR>
-nnoremap <C-W>k :echo "Use [space]wk"<CR>
-nnoremap <C-W>l :echo "Use [space]wl"<CR>
-nnoremap <C-W>h :echo "Use [space]wh"<CR>
-nnoremap <C-W>c :echo "Use [space]wc"<CR>
-nnoremap <C-W>s :echo "Use [space]ws"<CR>
-nnoremap <C-W>v :echo "Use [space]wv"<CR>
-nnoremap <C-W>= :echo "Use [space]w="<CR>
-nnoremap <C-W>o :echo "Use [space]0o"<CR>
-
-" go shortcuts
-nnoremap <Leader>gr :GoRun<CR>
-nnoremap <Leader>gb :GoBuild<CR>
-nnoremap <Leader>gf :GoFmt<CR>
-nnoremap <Leader>gi :GoImports<CR>
-
 set hidden " don't warn about unsaved buffer
 
 set relativenumber
@@ -82,8 +55,8 @@ highlight SpellBad ctermbg=88
 highlight SignColumn ctermbg=none
 highlight SyntasticErrorSign ctermfg=88
 
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+" nnoremap <leader>ev :e $MYVIMRC<cr>
+" nnoremap <leader>sv :source $MYVIMRC<cr>
 
 set autoread
 
@@ -105,17 +78,17 @@ Plug 'tpope/vim-abolish'
 Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 silent! nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 
-Plug 'jlanzarotta/bufexplorer', {'on': 'BufExplorer'}
-nnoremap <leader>b :BufExplorer<cr>
+" Plug 'jlanzarotta/bufexplorer', {'on': 'BufExplorer'}
+" nnoremap <leader>b :BufExplorer<cr>
 
 " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 " Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 
 " Plug 'mxw/vim-jsx'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-noremap <silent> <leader>t :Files<CR>
 
 Plug 'fatih/vim-go'
 
@@ -131,3 +104,48 @@ Plug 'jremmen/vim-ripgrep'
 noremap <silent> <leader>g :Rg<CR>
 call plug#end()
 " generate-dotfiles 2017-05-07 end
+
+" SHORTCUTS
+nnoremap <leader>snp :set nopaste<cr>
+nnoremap <leader>sp :set paste<cr>
+
+" fzf
+noremap <silent> <leader>t :Files<CR>
+noremap <silent> <leader>fg :GFiles<CR>
+noremap <silent> <leader>fa :Files<CR>
+noremap <silent> <leader>b :Buffers<CR>
+
+" prefix mapping
+nnoremap <Leader>wj <C-W>j
+nnoremap <Leader>wk <C-W>k
+nnoremap <Leader>wl <C-W>l
+nnoremap <Leader>wh <C-W>h
+nnoremap <Leader>wc <C-W>c
+nnoremap <Leader>ws <C-W>s
+nnoremap <Leader>wv <C-W>v
+nnoremap <Leader>w= <C-W>=
+nnoremap <Leader>wo <C-W>o
+
+nnoremap <C-W>j :echo "Use [space]wj"<CR>
+nnoremap <C-W>k :echo "Use [space]wk"<CR>
+nnoremap <C-W>l :echo "Use [space]wl"<CR>
+nnoremap <C-W>h :echo "Use [space]wh"<CR>
+nnoremap <C-W>c :echo "Use [space]wc"<CR>
+nnoremap <C-W>s :echo "Use [space]ws"<CR>
+nnoremap <C-W>v :echo "Use [space]wv"<CR>
+nnoremap <C-W>= :echo "Use [space]w="<CR>
+nnoremap <C-W>o :echo "Use [space]0o"<CR>
+
+" go shortcuts
+nnoremap <Leader>gr :GoRun<CR>
+nnoremap <Leader>gb :GoBuild<CR>
+nnoremap <Leader>gf :GoFmt<CR>
+nnoremap <Leader>gi :GoImports<CR>
+" autocmd FileType go autocmd BufWritePre <buffer> call GoFmt()
+augroup go
+  autocmd FileType go autocmd BufWritePre <buffer> GoFmt
+  autocmd FileType go autocmd BufWritePre <buffer> GoImports
+augroup END
+
+nnoremap <Leader>vr :source ~/.vimrc<CR>
+nnoremap <Leader>ve :e ~/.vimrc<CR>
