@@ -60,45 +60,47 @@ set autoread
 set shiftround
 
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-commentary'
-xmap \ <Plug>Commentary
-nmap \ <Plug>CommentaryLine
+  Plug 'tpope/vim-commentary'
+  xmap \ <Plug>Commentary
+  nmap \ <Plug>CommentaryLine
 
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
 
-Plug 'tpope/vim-abolish'
+  Plug 'tpope/vim-abolish'
 
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" noremap <Leader>u :UltiSnipsEdit<CR>
+  " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+  " noremap <Leader>u :UltiSnipsEdit<CR>
 
-Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
-silent! nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
+  Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
+  silent! nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 
-" Plug 'jlanzarotta/bufexplorer', {'on': 'BufExplorer'}
-" nnoremap <leader>b :BufExplorer<cr>
+  " Plug 'jlanzarotta/bufexplorer', {'on': 'BufExplorer'}
+  " nnoremap <leader>b :BufExplorer<cr>
 
-" Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-" Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+  " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+  " Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+  Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 
-" Plug 'mxw/vim-jsx'
+  " Plug 'mxw/vim-jsx'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
-Plug 'fatih/vim-go'
+  Plug 'fatih/vim-go'
 
-" Command for git grep
-" - fzf#vim#grep(command, with_column, [options], [fullscreen])
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+  " Command for git grep
+  " - fzf#vim#grep(command, with_column, [options], [fullscreen])
+  command! -bang -nargs=* GGrep
+    \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
 
-" Plug 'flowtype/vim-flow'
-" Plug 'rafi/awesome-vim-colorschemes'
+  " Plug 'flowtype/vim-flow'
+  " Plug 'rafi/awesome-vim-colorschemes'
 
-Plug 'jremmen/vim-ripgrep'
-noremap <silent> <leader>g :Rg<CR>
+  Plug 'jremmen/vim-ripgrep'
+
+  Plug 'benmills/vimux'
+  noremap <silent> <leader>g :Rg<CR>
 call plug#end()
 " generate-dotfiles 2017-05-07 end
 
@@ -134,7 +136,12 @@ nnoremap <C-W>= :echoe "use w="<CR>
 nnoremap <C-W>o :echoe "use wo"<CR>
 
 " go shortcuts
-nnoremap <Leader>gr :GoRun<CR>
+" nnoremap <Leader>gr :GoRun<CR>
+function! JackGoRun()
+  call VimuxInterruptRunner()
+  call VimuxRunCommand("go run " . @%)
+endfunction
+nnoremap <Leader>gr :call JackGoRun()<CR>
 nnoremap <Leader>gb :GoBuild<CR>
 nnoremap <Leader>gf :GoFmt<CR>
 nnoremap <Leader>gi :GoImports<CR>
@@ -150,4 +157,5 @@ nnoremap <Leader>ve :e ~/.vimrc<CR>
 " nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>ev :echoe "use ve"<CR>
 " nnoremap <leader>sv :source $MYVIMRC<cr>
+
 
