@@ -159,4 +159,8 @@ nnoremap <Leader>ve :e ~/.vimrc<CR>
 nnoremap <leader>ev :echoe "use ve"<CR>
 " nnoremap <leader>sv :source $MYVIMRC<cr>
 
+nnoremap <leader>sw :Rg <cword><CR>
 
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
