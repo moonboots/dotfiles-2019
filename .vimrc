@@ -34,23 +34,19 @@ nnoremap <C-L> :nohls<CR><C-L>
 
 set noesckeys
 
-set cursorline
-
-" disable existing cursorline styles like underlining
-highlight CursorLine cterm=NONE
+" set cursorline
 
 " highlight current line number green
 highlight CursorLineNR ctermfg=112
-
-au InsertEnter * highlight Cursorline ctermbg=233
-au InsertEnter * highlight CursorLineNR ctermfg=196
-
-au InsertLeave * highlight Cursorline ctermbg=none
-au InsertLeave * highlight CursorLineNR ctermfg=112
+highlight CursorLine ctermbg=none
+highlight CursorLineNR ctermbg=none
+" highlight Cursor ctermbg=124
+highlight Cursor ctermfg=124
+" highlight iCursor ctermbg=124
 
 highlight MatchParen ctermbg=235 ctermfg=118
 highlight Search ctermbg=52
-highlight Visual ctermbg=235
+highlight Visual ctermbg=56
 highlight SpellBad ctermbg=88
 highlight SignColumn ctermbg=none
 highlight SyntasticErrorSign ctermfg=88
