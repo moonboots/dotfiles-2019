@@ -64,6 +64,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
 
   Plug 'tpope/vim-abolish'
+  Plug 'tpope/vim-fugitive'
 
   " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   " noremap <Leader>u :UltiSnipsEdit<CR>
@@ -75,7 +76,8 @@ call plug#begin('~/.vim/plugged')
   " nnoremap <leader>b :BufExplorer<cr>
 
   " Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-  " Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+  Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+  Plug 'tpope/vim-rails', {'for': 'ruby'}
   Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 
   " Plug 'mxw/vim-jsx'
@@ -97,6 +99,9 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'benmills/vimux'
   noremap <silent> <leader>g :Rg<CR>
+
+  " Plug 'ngmy/vim-rubocop', {'for': 'ruby'}
+  Plug 'w0rp/ale'
 call plug#end()
 " generate-dotfiles 2017-05-07 end
 
