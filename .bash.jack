@@ -8,7 +8,14 @@ PS1="\n$gray\w$end\n${color}$ $end"
 
 export TERM=screen-256color
 export EDITOR=vim
-export PROMPT_COMMAND='history -a'
+
+export PROMPT_COMMAND='history -a; history -r'
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export HISTCONTROL=ignorespace:erasedups
+shopt -s histappend
+shopt -s cmdhist
+
 export GO111MODULE=on
 
 alias gcm='git commit -m'
